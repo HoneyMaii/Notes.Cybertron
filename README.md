@@ -1,8 +1,8 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
-# heroImage: /hero.png
+heroText: EdwardChu 学习笔记
+tagline: 善良，要勇敢，要像星星一样努力发光✨
+# heroImage: /universe.jpeg
 # heroImageStyle: {
 #   maxWidth: '600px',
 #   width: '100%',
@@ -11,6 +11,7 @@ tagline: A simple and beautiful vuepress blog theme.
 #   background: '#fff',
 #   borderRadius: '1rem',
 # }
+bgImage: /universe.jpeg
 bgImageStyle: {
   height: '450px'
 }

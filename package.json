@@ -1,7 +1,7 @@
 {
-    "name": "CyberNotes",
+    "name": "notes.cyber",
     "version": "1.0.0",
-    "author": "reco_luan",
+    "author": "edward chu",
     "scripts": {
         "dev": "vuepress dev . --open --host \"localhost\"",
         "build": "vuepress build ."
