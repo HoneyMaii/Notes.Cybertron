@@ -34,9 +34,15 @@ module.exports = {
                 "text": "文档",
                 "icon": "reco-message",
                 "items": [{
-                    "text": "vuepress-reco",
-                    "link": "/docs/theme-reco/"
-                }]
+                        text: 'vuepress-reco',
+                        link: '/docs/theme-reco/'
+                    },
+                    {
+                        text: '.NET',
+                        link: '/docs/NET/'
+
+                    }
+                ]
             },
             {
                 "text": "联系我",
@@ -54,6 +60,11 @@ module.exports = {
                 "theme",
                 "plugin",
                 "api"
+            ],
+            "/docs/NET/": [
+                "",
+                "thread",
+                "netcore"
             ]
         },
         "type": "blog",
