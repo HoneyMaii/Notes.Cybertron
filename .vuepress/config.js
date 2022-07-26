@@ -57,6 +57,7 @@ module.exports = {
         "sidebar": {
             "/docs/theme-reco/": [
                 "",
+                'git',
                 "theme",
                 "plugin",
                 "api"
@@ -64,7 +65,9 @@ module.exports = {
             "/docs/NET/": [
                 "",
                 "thread",
-                "netcore"
+                "netcore",
+                'vscode',
+                'resharper'
             ]
         },
         "type": "blog",
