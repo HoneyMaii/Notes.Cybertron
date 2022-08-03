@@ -1,5 +1,38 @@
 # Git使用
 
+## Git 配置
+1. **全局配置**
+```bash
+git config --global user.name 'YourName'
+git config --global user.email 'YourEmailAddress'
+```
+
+## Git SSH 配置
+右键打开 Git bash
+1.查看是否配置过密钥
+```bash
+cat ~/.ssh
+```
+提示 NotFound，则代表未配置过 SSH，进行下一步
+2.创建 SSH
+```bash
+ssh-keygen -t rsa -C 'YourEmailAddress'
+```
+之后出现提示就一直按 Enter 即可
+3. 查看生成的 SSH Key
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+你讲看到这样一段
+```
+ssh-rsa XXXXXXXXXXXXXX YourEmailAddress
+```
+代表生成成功
+4.登录 GitHub/GitLab 等
+- github
+ Setting/SSH and GPG Keys，选择 New SSH Key，在 Key 这一栏填写刚刚生成的 ssh key
+- gitlab
+ Preferences/SSH Keys,在 Key 这一栏填写刚刚生成的 ssh key,点击 Add Key 即可
 ## Git分支操作
 
 ### 1.创建分支
