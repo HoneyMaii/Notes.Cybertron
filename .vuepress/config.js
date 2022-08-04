@@ -64,7 +64,7 @@ module.exports = {
             ],
             "/docs/NET/": [
                 "",
-                "C#",
+                "CSharp",
                 "thread",
                 "netcore",
                 'EntityFrameworkCore',
