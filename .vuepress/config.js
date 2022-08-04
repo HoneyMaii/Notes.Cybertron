@@ -64,8 +64,10 @@ module.exports = {
             ],
             "/docs/NET/": [
                 "",
+                "C#",
                 "thread",
                 "netcore",
+                'EntityFrameworkCore'
                 'vscode',
                 'resharper'
             ]
