@@ -67,7 +67,7 @@ module.exports = {
                 "C#",
                 "thread",
                 "netcore",
-                'EntityFrameworkCore'
+                'EntityFrameworkCore',
                 'vscode',
                 'resharper'
             ]
