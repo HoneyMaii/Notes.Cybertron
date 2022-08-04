@@ -1,4 +1,7 @@
-## EntityFramework Core
+---
+title: EntityFramework Core
+date: 2022-08-04
+---
 ### 基础知识
 
 
