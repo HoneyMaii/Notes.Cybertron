@@ -1,4 +1,7 @@
-## C#
+---
+title: C#
+date: 2022-08-04
+---
 ### System.Linq
 #### C# ToLookup 的用法
 > 背景
