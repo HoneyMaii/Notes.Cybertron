@@ -60,7 +60,7 @@ module.exports = {
                 'git',
                 "theme",
                 "plugin",
-                "api"
+                "Alibaba--Nacos"
             ],
             "/docs/NET/": [
                 "",
