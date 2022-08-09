@@ -52,7 +52,7 @@
 
 - 查看 nacos 配置信息：`vim /nacos/conf/application.properties`
 
-  ![image-20220807153652304](Alibaba--Nacos.assets/image-20220807153652304.png)
+  ![image-20220807153652304](/Alibaba--Nacos.assets/image-20220807153652304.png)
 
 - 在浏览器输入地址查看：`<your-ipaddress>:8848/nacos`
 
@@ -60,7 +60,7 @@
 
   默认密码：nacos
 
-  ![image-20220807153927330](Alibaba--Nacos.assets/image-20220807153927330.png)
+  ![image-20220807153927330](/Alibaba--Nacos.assets/image-20220807153927330.png)
 
 - 模块介绍
 
@@ -68,7 +68,7 @@
 
   2. **命名空间**：不同的产品可以根据命名空间进行管理，
 
-     ![image-20220807154155804](Alibaba--Nacos.assets/image-20220807154155804.png)
+     ![image-20220807154155804](/Alibaba--Nacos.assets/image-20220807154155804.png)
 
   
 
@@ -137,7 +137,7 @@
 
 ## Alibaba Nacos Clients 的服务注册
 
-![image-20220807172526569](Alibaba--Nacos.assets/image-20220807172526569.png)
+![image-20220807172526569](/Alibaba--Nacos.assets/image-20220807172526569.png)
 
 
 
@@ -194,11 +194,11 @@ public static void GetNacosConfig(ConfigurationManager builder)
 }
 ```
 
-![image-20220809224255990](Alibaba--Nacos.assets/image-20220809224255990.png)
+![image-20220809224255990](/Alibaba--Nacos.assets/image-20220809224255990.png)
 
-![image-20220809224323891](Alibaba--Nacos.assets/image-20220809224323891.png)
+![image-20220809224323891](/Alibaba--Nacos.assets/image-20220809224323891.png)
 
-![image-20220809224345414](Alibaba--Nacos.assets/image-20220809224345414.png)
+![image-20220809224345414](/Alibaba--Nacos.assets/image-20220809224345414.png)
 
 > **注意**
 >
