@@ -276,3 +276,107 @@ IOptions:{"Password":"Command_123","Servers":[{"Host":"101.133.132.113","Port":"
 IOptionsSnapshot:{"Password":"Command_123444","Servers":[{"Host":"101.133.132.113","Port":"63791"}]}
 IOptionsMonitor:{"Password":"Command_123444","Servers":[{"Host":"101.133.132.113","Port":"63791"}]}
 ```
+
+
+
+## 二.集成服务
+
+集成服务，是为了方便程序启动时，自动把服务注册到 Nacos 里面。
+
+### 1.首先要安装 nuget 包
+
+```csharp
+<PackageReference Include="nacos-sdk-csharp.Extensions.AspNetCore" Version="1.0.2" />
+```
+
+### 2.服务的相关配置
+
+```json
+// 服务注册配置
+  "nacos": {
+    "EndPoint": "",
+    "ServerAddresses": [
+      "http://101.133.132.113:8858"
+    ],
+    "DefaultTimeOut": 15000,
+    "Namespace": "dev",
+    "ListenInterval": 1000,
+    "ServiceName": "NetCoreNamingDemo",
+    "GroupName": "DEFAULT_GROUP",
+    "ClusterName": "DEFAULT",
+    "Ip": "",
+    "PreferredNetworks": "192.168",
+    "Port": 9877,
+    "Weight": 100,
+    "RegisterEnabled": true,
+    "InstanceEnabled": true, // 表示这个服务注册上去后，是否马上就上线
+    "Ephemeral": true,
+    "Secure": false, // 表示当前服务是否是安全实例，用于标识访问的时候是否要启用 https，这个在发现服务后，可以从 Metadata 里面取到
+    "AccessKey": "",
+    "SecretKey": "",
+    "UserName": "",
+    "Password": "",
+    "ConfigUseRpc": true,
+    "NamingUseRpc": true,
+    "NamingLoadCacheAtStart": "",
+    "Metadata": {
+      "aa": "bb",
+      "cc": "dd"
+    }
+  }
+```
+
+这里面多了几个配置要单独说明一下。
+
+- InstanceEnabled， 表示这个服务注册上去后，是否马上就上线
+- Secure，表示当前服务是否是安全实例，用于标识访问的时候是否要启用 https，这个在发现服务后，可以从 Metadata 里面取到
+
+然后再 Startup 里面添加自动注册的代码。
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddNacosAspNet(Configuration);
+    services.AddControllers();
+}
+```
+
+启动服务后，可以在 nacos 控制台看到相关的服务信息。
+
+![image-20220810000252738](/Alibaba--Nacos.assets/image-20220810000252738.png)
+
+![image-20220810000309320](/Alibaba--Nacos.assets/image-20220810000309320.png)
+
+### 3.服务发现
+
+接下来就可以通过 `INacosNamingService` 接口来获取到这个服务了。
+
+```csharp
+[HttpGet("test")]
+public async Task<string> Test()
+{        
+    // 这里需要知道被调用方的服务名
+    // 找到一个健康实例
+    var instance = await _svc.SelectOneHealthyInstance("NetCoreNamingDemo", "DEFAULT_GROUP");
+    var host = $"{instance.Ip}:{instance.Port}";
+
+    // 根据 secure 来判断服务要不要用 https，
+    // 这里是约定，参考了 spring cloud 那边，不是强制的，也可以用其他标识
+    var baseUrl = instance.Metadata.TryGetValue("secure", out _)
+        ? $"https://{host}"
+        : $"http://{host}";
+
+    if (string.IsNullOrWhiteSpace(baseUrl))
+    {
+        return "empty";
+    }
+
+    var url = $"{baseUrl}";
+
+    var client = _factory.CreateClient();
+
+    var resp = await client.GetAsync(url);
+    return await resp.Content.ReadAsStringAsync();
+}
+```
+
