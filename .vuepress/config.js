@@ -69,7 +69,8 @@ module.exports = {
                 "netcore",
                 'EntityFrameworkCore',
                 'vscode',
-                'resharper'
+                'resharper',
+                'volume'
             ]
         },
         "type": "blog",
