@@ -74,8 +74,8 @@ module.exports = {
                 'vscode',
                 'resharper'
             ],
-            '/docs/Dockers': [
-                '',
+            "/docs/Dockers/": [
+                "",
                 'volume'
             ]
         },
