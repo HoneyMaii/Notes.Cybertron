@@ -69,7 +69,10 @@ module.exports = {
                 "netcore",
                 'EntityFrameworkCore',
                 'vscode',
-                'resharper',
+                'resharper'
+            ],
+            '/docs/Docker': [
+                '',
                 'volume'
             ]
         },
