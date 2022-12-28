@@ -43,7 +43,7 @@ module.exports = {
                     },
                     {
                         text: 'Docker',
-                        link: '/docs/Docker/'
+                        link: '/docs/Dockers/'
                     }
                 ]
             },
@@ -74,7 +74,7 @@ module.exports = {
                 'vscode',
                 'resharper'
             ],
-            '/docs/Docker': [
+            '/docs/Dockers': [
                 '',
                 'volume'
             ]
