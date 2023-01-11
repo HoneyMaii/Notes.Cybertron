@@ -199,7 +199,7 @@ git checkout commitId -b 本地新branchName
 ```shell
 // 依然通过push 跟上你希望的远程新分支名字即可
 git push origin HEAD:远程新branchName
-
+```
 
 ## Git 撤销
 
