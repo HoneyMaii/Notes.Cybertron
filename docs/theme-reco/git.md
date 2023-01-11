@@ -187,6 +187,19 @@ $ git rebase --continue
 ```shell
 $ git rebase --abort
 ```
+### 12.从某一个commit开始创建本地分支
+
+```shell
+// 通过checkout 跟上commitId 即可创建制定commit之前的本地分支
+git checkout commitId -b 本地新branchName
+```
+
+上传到远程服务器
+
+```shell
+// 依然通过push 跟上你希望的远程新分支名字即可
+git push origin HEAD:远程新branchName
+
 
 ## Git 撤销
 
@@ -215,3 +228,23 @@ $ git rebase --abort
 可以使用 `git reset --hard HEAD^` 来回退到上一次commit的状态。
 
 此命令可以用来回退到任意版本：`git reset --hard commitid` 
+
+## Git 查看提交记录
+
+`git show <commit id>`
+
+## Git提交
+
+`feat`: 新功能（feature）
+`fix`: 修补bug
+`docs`: 文档（documentation）
+`style`: 格式（不影响代码运行的变动）
+`refactor`: 重构（即不是新增功能，也不是修改bug的代码变动）
+`chore`: 构建过程或辅助工具的变动
+`revert`: 撤销，版本回退
+`perf`: 性能优化
+`test`：测试
+`improvement`: 改进
+`build`: 打包
+`ci`: 持续集成
+
